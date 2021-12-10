@@ -325,6 +325,8 @@ const app = {
     }, 300);
   },
   loadCurrentSong: function () {
+    const h4Element = $("header h4")
+    h4Element.textContent = this.currentSong.singer;
     heading.textContent = this.currentSong.name;
     cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
     audio.src = this.currentSong.path;
