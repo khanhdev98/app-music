@@ -1,6 +1,18 @@
 // Một số bài hát có thể bị lỗi do liên kết bị hỏng. Vui lòng thay thế liên kết khác để có thể phát
 // Some songs may be faulty due to broken links. Please replace another link so that it can be played
 
+
+// những việc phải làm
+// render song
+// scroll top
+// play/ pause /seek
+// cd rotate
+// next/ prev
+// random
+// next/ repeat when ended
+// Active song
+// Scroll active song into view
+// play song when click
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -26,8 +38,18 @@ const app = {
   isRepeat: false,
   config: {},
   // (1/2) Uncomment the line below to use localStorage
-  // config: JSON.parse(localStorage.getItem(PlAYER_STORAGE_KEY)) || {},
+  config: JSON.parse(localStorage.getItem(PlAYER_STORAGE_KEY)) || {},
   songs: [
+
+    {
+      name: "Baby",
+      singer: "Justin Bieber",
+      path:
+        "https://data51.chiasenhac.com/downloads/1004/6/1003406-305992e0/128/Baby%20-%20Justin%20Bieber.mp3",
+      image:
+        "https://data.chiasenhac.com/data/cover/3/2024.jpg"
+    },
+
     {
         name: "Love Yourself",
         singer: "Justin Bieber",
@@ -70,13 +92,6 @@ const app = {
     },
 
     {
-      name: "Nắm (EDM Version)",
-      singer: "Minh Vương M4U; Hương Ly; DJ",
-      path: "https://data.chiasenhac.com/down2/2210/5/2209880-58fc1745/128/Nam%20EDM%20Version_%20-%20Minh%20Vuong%20M4U_%20Huong.mp3",
-      image: "https://data.chiasenhac.com/data/cover/151/150896.jpg"
-    },
-
-    {
         name: "One Call Away",
         singer: "Charlie Puth",
         path: "https://data22.chiasenhac.com/downloads/1540/5/1539612-330ce8e7/128/One%20Call%20Away%20-%20Charlie%20Puth.mp3",
@@ -98,56 +113,42 @@ const app = {
         image:
           "https://data.chiasenhac.com/data/cover/3/2190.jpg"
     },
-
     {
-      name: "Đế Vương",
-      singer: "Đình Dũng; ACV",
-      path:
-        "https://data.chiasenhac.com/down2/2210/5/2209308-306e581d/128/De%20Vuong%20-%20Dinh%20Dung_%20ACV.mp3",
-      image: "https://data.chiasenhac.com/data/cover/151/150745.jpg"
+      name: "My Heart Will Go On",
+      singer: "Celine Dion",
+      path: "https://data51.chiasenhac.com/downloads/1002/5/1001533-e48441ea/128/My%20Heart%20Will%20Go%20On%20-%20Celine%20Dion.mp3",
+      image:
+        "https://data.chiasenhac.com/data/cover/3/2190.jpg"
     },
     {
-      name: "Em Đã Có Người Mới",
-      singer: "Tóc Tiên; người cũ",
-      path: "https://data.chiasenhac.com/down2/2212/5/2211036-47d685a9/128/Em%20Da%20Co%20Nguoi%20Moi%20-%20Toc%20Tien_%20nguoi%20cu.mp3",
+      name: "Reality",
+      singer: "Lost Frequencies; Janieck Devy",
+      path: "https://data22.chiasenhac.com/downloads/1541/1/1540695-49ecd0c4/128/Reality%20-%20Lost%20Frequencies_%20Janieck%20Devy.mp3",
       image:
-        "https://data.chiasenhac.com/data/cover/152/151147.jpg"
+          "https://data.chiasenhac.com/data/cover/46/45328.jpg"
     },
     {
-      name: "Mashup Ái Nộ - Lạc (Remix)",
-      singer: "Yling; HuyLee; Masew",
-      path: "https://data.chiasenhac.com/down2/2211/5/2210582-aa5c63f0/128/Mashup%20Ai%20No%20-%20Lac%20Remix_%20-%20Yling_%20HuyLe.mp3",
+      name: "That Girl",
+      singer: "Celine Dion",
+      path: "https://data3.chiasenhac.com/downloads/1740/1/1739574-04b9b9a9/128/That%20Girl%20-%20Olly%20Murs.mp3",
       image:
-        "https://data.chiasenhac.com/data/cover/152/151078.jpg"
+        "https://data.chiasenhac.com/data/cover/66/65717.jpg"
+    },
+    {
+      name: "Sugar",
+      singer: "Maroon 5",
+      path: "https://data62.chiasenhac.com/downloads/1349/1/1348625-00a323af/128/Sugar%20-%20Maroon%205.mp3",
+      image:
+        "https://data.chiasenhac.com/data/cover/29/28216.jpg"
     },
    
-    {
-      name: "Váy Cưới (Remix)",
-      singer: " HuyLee; Duyn203",
-      path: "https://data25.chiasenhac.com/download2/2208/5/2207601-1ea83918/128/Vay%20Cuoi%20Remix_%20-%20HuyLee_%20Duyn203.mp3",
-      image:
-        "https://data.chiasenhac.com/data/cover/151/150356.jpg"
-    },
-    {
-        name: "Không Bằng",
-        singer: "Na",
-        path: "https://data25.chiasenhac.com/download2/2204/5/2203557-2bbc08c6/128/Khong%20Bang%20-%20Na.mp3",
-        image:
-          "https://data.chiasenhac.com/data/cover/150/149127.jpg"
-      },
-      {
-        name: "Kiếp Này Em Gả Cho Anh",
-        singer: "Thái Học",
-        path: "https://data.chiasenhac.com/down2/2210/5/2209395-3ad170fa/128/Kiep%20Nay%20Em%20Ga%20Cho%20Anh%20-%20Thai%20Hoc.mp3",
-        image:
-          "https://data.chiasenhac.com/data/cover/151/150765.jpg"
-      }
   ],
   setConfig: function (key, value) {
     this.config[key] = value;
     // (2/2) Uncomment the line below to use localStorage
-    // localStorage.setItem(PlAYER_STORAGE_KEY, JSON.stringify(this.config));
+    localStorage.setItem(PlAYER_STORAGE_KEY, JSON.stringify(this.config));
   },
+
   render: function () {
     const htmls = this.songs.map((song, index) => {
       return `
@@ -169,6 +170,8 @@ const app = {
     });
     playlist.innerHTML = htmls.join("");
   },
+
+
   defineProperties: function () {
     Object.defineProperty(this, "currentSong", {
       get: function () {
@@ -182,20 +185,21 @@ const app = {
 
         // Xử lý CD quay / dừng
         // Handle CD spins / stops
-        const cdThumbAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
-        duration: 10000, // 10 seconds
-        iterations: Infinity
-        });
+        const cdThumbAnimate= cdThumb.animate([{ transform: "rotate(360deg)"}], {
+          duration: 20000, // 10 seconds
+          iterations: Infinity
+        })
         cdThumbAnimate.pause();
 
         // Xử lý phóng to / thu nhỏ CD
         // Handles CD enlargement / reduction
+     
         document.onscroll = function () {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const newCdWidth = cdWidth - scrollTop;
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          const newCdWidth = cdWidth - scrollTop;
 
-        cd.style.width = newCdWidth > 0 ? newCdWidth + "px" : 0;
-        cd.style.opacity = newCdWidth / cdWidth;
+          cd.style.width = newCdWidth > 0 ? newCdWidth + "px" : 0;
+          cd.style.opacity = newCdWidth / cdWidth;
         };
 
         // Xử lý khi click play
@@ -226,21 +230,20 @@ const app = {
 
         // Khi tiến độ bài hát thay đổi
         // When the song progress changes
-        audio.ontimeupdate = function () {
-            if (audio.duration) {
-                const progressPercent = Math.floor(
-                (audio.currentTime / audio.duration) * 100
-                );
-                progress.value = progressPercent;
-            }
-        };
-
-        // Xử lý khi tua song
-        // Handling when seek
-        progress.onchange = function (e) {
-            const seekTime = (audio.duration / 100) * e.target.value;
-            audio.currentTime = seekTime;
-        };
+      /** 3. SEEK */
+    // Thêm eventListener timeupdate thay vì sử dung ontimeupdate:
+    audio.ontimeupdate = function () {
+      if (audio.duration) {
+        progress.value = Math.floor((audio.currentTime / audio.duration) * 100);
+      }
+    }
+   
+    progress.oninput = function (e) {
+      
+      const seekTime = (audio.duration / 100) * e.target.value;
+      audio.currentTime = seekTime;
+    };
+    
 
         // Khi next song
         // When next song
@@ -270,28 +273,40 @@ const app = {
 
         // Xử lý bật / tắt random song
         // Handling on / off random song
+        // trước hết thêm class active vào btn-repeat
+        // và btn-random bên file html
+        //<div class="btn btn-repeat active">
+        // <div class="btn btn-random active">
         randomBtn.onclick = function (e) {
-        _this.isRandom = !_this.isRandom;
-        _this.setConfig("isRandom", _this.isRandom);
-        randomBtn.classList.toggle("active", _this.isRandom);
+        
+          _this.isRandom = !_this.isRandom
+          randomBtn.classList.remove("active", _this.isRandom);
+          _this.setConfig("isRandom", _this.isRandom);
+          randomBtn.classList.toggle("active", _this.isRandom);
+
+          _this.isRepeat = false;
+          repeatBtn.classList.remove("active");
         };
 
         // Xử lý lặp lại một song
         // Single-parallel repeat processing
         repeatBtn.onclick = function (e) {
-        _this.isRepeat = !_this.isRepeat;
-        _this.setConfig("isRepeat", _this.isRepeat);
-        repeatBtn.classList.toggle("active", _this.isRepeat);
+          _this.isRepeat = !_this.isRepeat
+          _this.setConfig("isRepeat", _this.isRepeat);
+          repeatBtn.classList.toggle("active", _this.isRepeat);
+
+          _this.isRandom = false;
+          randomBtn.classList.remove("active");
         };
 
         // Xử lý next song khi audio ended
         // Handle next song when audio ended
         audio.onended = function () {
-        if (_this.isRepeat) {
-            audio.play();
-        } else {
-            nextBtn.click();
-        }
+            if (_this.isRepeat) {
+                audio.play();
+            } else {
+                nextBtn.click();
+            }
         };
 
         // Lắng nghe hành vi click vào playlist
@@ -349,15 +364,17 @@ const app = {
     }
     this.loadCurrentSong();
   },
+
   playRandomSong: function () {
     let newIndex;
     do {
       newIndex = Math.floor(Math.random() * this.songs.length);
     } while (newIndex === this.currentIndex);
-
     this.currentIndex = newIndex;
     this.loadCurrentSong();
   },
+
+ 
   start: function () {
     // Gán cấu hình từ config vào ứng dụng
     // Assign configuration from config to application
@@ -386,3 +403,4 @@ const app = {
 };
 
 app.start();
+
