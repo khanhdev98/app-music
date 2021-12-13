@@ -45,7 +45,7 @@ const app = {
       name: "Baby",
       singer: "Justin Bieber",
       path:
-        "https://data51.chiasenhac.com/downloads/1004/6/1003406-305992e0/128/Baby%20-%20Justin%20Bieber.mp3",
+        "./atssets/path/Baby - Justin Bieber.mp3",
       image:
         "https://data.chiasenhac.com/data/cover/3/2024.jpg"
     },
@@ -54,7 +54,7 @@ const app = {
         name: "Love Yourself",
         singer: "Justin Bieber",
         path:
-          "https://data2.chiasenhac.com/stream2/1625/5/1624856-feb13819/128/Love%20Yourself%20-%20Justin%20Bieber.mp3",
+          "./atssets/path/Love Yourself - Justin Bieber.mp3",
         image:
           "https://data.chiasenhac.com/data/cover/53/52821.jpg"
     },
@@ -62,7 +62,7 @@ const app = {
         name: "Holy",
         singer: "Justin Bieber",
         path:
-          "https://data.chiasenhac.com/down2/2160/5/2159637-753890c6/128/Holy%20-%20Justin%20Bieber_%20Chance%20The%20Rapper.mp3",
+          "https://data.chiasenhac.com/down2/2160/1/2159637-753890c6/128/Holy%20-%20Justin%20Bieber_%20Chance%20The%20Rapper.mp3",
         image:
           "https://data.chiasenhac.com/data/cover/133/132097.jpg"
     },
@@ -70,7 +70,7 @@ const app = {
         name: "What Do You Mean?",
         singer: "Justin Bieber",
         path:
-          "https://data22.chiasenhac.com/downloads/1544/5/1543063-0b6c8f27/128/What%20Do%20You%20Mean_%20-%20Justin%20Bieber.mp3",
+        "./atssets/path/What Do You Mean_ - Justin Bieber.mp3",
         image:
           "https://data.chiasenhac.com/data/cover/138/137424.jpg"
     },
@@ -79,7 +79,7 @@ const app = {
         name: "Sorry",
         singer: "Justin Bieber",
         path:
-          "https://data2.chiasenhac.com/stream2/1573/5/1572844-1e6028ee/128/Sorry%20-%20Justin%20Bieber.mp3",
+          "./atssets/path/Sorry - Justin Bieber.mp3",
         image:
           "https://data.chiasenhac.com/data/cover/49/48130.jpg"
     },
@@ -87,21 +87,21 @@ const app = {
     {
         name: "See You Again",
         singer: "Wiz Khalifa; Charlie Puth",
-        path: "https://data17.chiasenhac.com/downloads/1470/5/1469867-9215ae26/128/See%20You%20Again%20-%20Wiz%20Khalifa_%20Charlie%20Put.mp3",
+        path: "./atssets/path/See You Again - Wiz Khalifa_ Charlie Put.mp3",
         image: "https://data.chiasenhac.com/data/cover/39/38730.jpg"
     },
 
     {
         name: "One Call Away",
         singer: "Charlie Puth",
-        path: "https://data22.chiasenhac.com/downloads/1540/5/1539612-330ce8e7/128/One%20Call%20Away%20-%20Charlie%20Puth.mp3",
+        path: "./atssets/path/One Call Away - Charlie Puth.mp3",
         image: "https://data.chiasenhac.com/data/cover/46/45246.jpg"
     },
 
     {
       name: "They Said",
       singer: "Binz; Touliver",
-      path: "https://data3.chiasenhac.com/downloads/2109/5/2108627-49eb4c8a/128/They%20Said%20-%20Binz_%20Touliver.mp3",
+      path: "https://data3.chiasenhac.com/downloads/2109/1/2108627-49eb4c8a/128/They%20Said%20-%20Binz_%20Touliver.mp3",
       image:
         "https://data.chiasenhac.com/data/cover/126/125484.jpg"
     },
@@ -109,7 +109,7 @@ const app = {
     {
         name: "My Heart Will Go On",
         singer: "Celine Dion",
-        path: "https://data51.chiasenhac.com/downloads/1002/5/1001533-e48441ea/128/My%20Heart%20Will%20Go%20On%20-%20Celine%20Dion.mp3",
+        path: "./atssets/path/My Heart Will Go On - Celine Dion.mp3",
         image:
           "https://data.chiasenhac.com/data/cover/3/2190.jpg"
     },
@@ -123,7 +123,7 @@ const app = {
     {
       name: "Reality",
       singer: "Lost Frequencies; Janieck Devy",
-      path: "https://data22.chiasenhac.com/downloads/1541/1/1540695-49ecd0c4/128/Reality%20-%20Lost%20Frequencies_%20Janieck%20Devy.mp3",
+      path: "./atssets/path/Reality - Lost Frequencies_ Janieck Devy.mp3",
       image:
           "https://data.chiasenhac.com/data/cover/46/45328.jpg"
     },
@@ -137,7 +137,7 @@ const app = {
     {
       name: "Sugar",
       singer: "Maroon 5",
-      path: "https://data62.chiasenhac.com/downloads/1349/1/1348625-00a323af/128/Sugar%20-%20Maroon%205.mp3",
+      path: "./atssets/path/Sugar - Maroon 5.mp3",
       image:
         "https://data.chiasenhac.com/data/cover/29/28216.jpg"
     },
