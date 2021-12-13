@@ -146,14 +146,14 @@ const app = {
       singer: "Justin Bieber; Jaden Smith",
       path: "./atssets/path/Never Say Never - Justin Bieber_ Jaden S.mp3",
       image:
-        "https://data.chiasenhac.com/data/cover/29/28216.jpg"
+        "https://data.chiasenhac.com/data/cover/3/2024.jpg"
     },
     {
       name: "Yummy",
       singer: "Justin Bieber",
       path: "./atssets/path/Yummy-JustinBieber-6185632.mp3",
       image:
-        "https://data.chiasenhac.com/data/cover/29/28216.jpg"
+        "https://data.chiasenhac.com/data/cover/49/48130.jpg"
     },
    
   ],
