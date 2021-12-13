@@ -141,6 +141,20 @@ const app = {
       image:
         "https://data.chiasenhac.com/data/cover/29/28216.jpg"
     },
+    {
+      name: "Never Say Never",
+      singer: "Justin Bieber; Jaden Smith",
+      path: "./atssets/path/Never Say Never - Justin Bieber_ Jaden S.mp3",
+      image:
+        "https://data.chiasenhac.com/data/cover/29/28216.jpg"
+    },
+    {
+      name: "Yummy",
+      singer: "Justin Bieber",
+      path: "./atssets/path/Yummy-JustinBieber-6185632.mp3",
+      image:
+        "https://data.chiasenhac.com/data/cover/29/28216.jpg"
+    },
    
   ],
   setConfig: function (key, value) {
